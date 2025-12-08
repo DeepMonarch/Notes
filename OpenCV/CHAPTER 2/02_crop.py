@@ -10,3 +10,7 @@ else:
     cv2.destroyAllWindows()
     # Save cropped image
     cv2.imwrite('cropped_image.jpg', cropped_image)
+    
+    # x axis top to bottom Pixels
+    # y axis left to right Pixels
+    # image[y1:y2, x1:x2] x1,y1 is the starting point and x2,y2 is the ending point
