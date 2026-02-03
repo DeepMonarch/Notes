@@ -71,3 +71,51 @@ lemonade_variations:
       - sugar
       - ice
 
+default_glass_size: &glass_size 12 # anchor
+large_glass_size: *glass_size # alias
+extra_large_glass_size: *glass_size
+# anchors and aliases for reusing values
+
+morning_special_:
+  <<: *glass_size
+  water: 200ml
+
+evening_special:
+  <<: *glass_size
+  water: 300ml
+
+# explicit data types using tags
+zip_code: !!str 12345 # treat as string
+count: !!int "10" # treat as integer
+
+# sets
+unique_ingredients: !!set
+  ? lemons: null
+  ? water: null
+  ? sugar: null
+  ? ice: null
+
+# complex mapping keys
+ingredient_nutrition:
+  ? lemons
+  : calories: 17
+    vitamin_c: 30mg
+  ? sugar
+  : calories: 387
+    type: sucrose
+  ? water
+  : calories: 0
+    type: H2O
+
+# merge key examples
+base_ingredients: &base_ingredients
+  lemons: 4
+  water: 1 liter
+  sugar: 100 grams
+  ice: as needed
+
+lemonade_recipe:
+  <<: *base_ingredients 
+  garnish: lemon slices
+  optional: mint leaves
+
