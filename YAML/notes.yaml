@@ -1,0 +1,73 @@
+# BASICS
+
+drink_type: lemonade # inline comment: This is a refreshing summer drink
+name: Classic Lemonade
+
+ingredients: # List 
+  - lemons
+  - water
+  - sugar
+  - ice
+
+# | multiline string scalar for detailed instructions
+# > folded style for a brief description
+
+
+servings: 5
+serving_suggestion: Serve chilled with a slice of lemon on the rim of the glass.
+
+# No multiline comments the YAML specification does not support them
+preparation_steps:
+  base: |  # block scalar for multiple lines
+    1. Squeeze the juice from the lemons.
+    2. In a pitcher, combine the lemon juice, water, and sugar.
+    3. Stir until the sugar is completely dissolved.
+    4. Add ice to the pitcher to chill the lemonade.
+
+  optional: |
+    5. Garnish with lemon slices or mint leaves if desired.
+
+# data types: string, list, integer, and block scalar
+
+description: "A classic lemonade recipe that is perfect for hot summer days. 
+  This drink is both sweet and tangy, making it a favorite among all ages."
+
+tagline: > # this is a folded block scalar
+  Refreshing and zesty lemonade to quench your thirst!
+
+# block scalars are used for longer text fields like preparation steps and descriptions.
+
+is_vegan: true
+is_gluten_free: true
+calories_per_serving: 120
+add_sugar: no
+add_salt: yes
+instant_mix: off
+sweetner_type: null
+alternative_ingredients: ~ # also null
+morning_special: 2023-08-15T10:30:00Z
+local_time: 2023-08-15 08:30:00 # local time without timezone # yyyy-mm-dd hh:mm:ss
+
+
+spices: [salt, ginger, cloves] # flow style list # not common for YAML but valid
+
+steeping_time: [2,3,4] 
+
+# nested list
+
+lemonade_variations:
+  - name: Strawberry Lemonade
+    ingredients:
+      - strawberries
+      - lemons
+      - water
+      - sugar
+      - ice
+  - name: Mint Lemonade
+    ingredients:
+      - mint leaves
+      - lemons
+      - water
+      - sugar
+      - ice
+
